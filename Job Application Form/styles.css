@@ -1,0 +1,99 @@
+.container {
+    width: 40vw;
+    background: whitesmoke;
+    margin: 0 auto 0 auto;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px gray;
+    padding-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+
+    background-color: lightgray;
+    box-shadow: 0 2px 5px black;
+}
+
+fieldset {
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 25px;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border: 2px solid red;
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid orange;
+}
+
+input:valid,
+select:valid,
+textarea:valid {
+    border: 2px solid green;
+}
+
+button {
+    display: block;
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: lightsalmon;
+    margin: 0 auto 0 auto;
+}
+
+button:hover {
+    background-color: orange;
+    color: white;
+    box-shadow: 0 2px 2px gray;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: green;
+    background-color: green;
+    box-shadow: 0 2px 5px gray;
+
+}
+
+
+label {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+input[type="radio"]:checked+label {
+    color: green;
+}
+
+input:first-of-type {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    display: block;
+    width: 95%;
+    margin: 5px auto 20px auto;
+    border-radius: 10px;
+    height: 30px;
+}
+
+#message {
+    height: 40px;
+}

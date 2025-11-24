@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>My Favorite Books</title>
+</head>
+
+<body>
+  <div class="backdrop">
+  </div>
+  <div class="overlay">
+    <form class="login-form">
+      <label for="login">
+        Login
+        <input type="text" name="login" id="login" value="" placeholder="Login">
+      </label>
+      <label for="password">
+        Password
+        <input type="password" name="password" id="password" value="">
+      </label>
+      <div class="submit-block">
+        <label for="remember">
+          <input type="checkbox" name="remember" id="remember">
+          Remember Me
+        </label>
+        <input type="submit" name="submit-button" value="LOG IN">
+      </div>
+    </form>
+  </div>
+
+  <div class="content">
+    <header>
+      <h1 class="main-header">My Favorite Books</h1>
+      <nav class="nav-bar">
+        <a href="#Fantasy" class="nav-link">Fantasy</a>
+        <a href="#ScienceFiction" class="nav-link">Science Fiction</a>
+        <a href="#NonFiction" class="nav-link">Non Fiction</a>
+      </nav>
+    </header>
+    <div id="cards-holder">
+      <h2 id="Fantasy">My favorite fantasy books</h2>
+      <div class="book-card">
+        <h3>The Hobbit</h2>
+          <p>by J.R.R. Tolkien</p>
+          <p>A fantasy novel about the adventures of Bilbo Baggins in Middle-earth.</p>
+      </div>
+      <div class="book-card">
+        <h3>Harry Potter and the Sorcerer's Stone</h2>
+          <p>by J.K. Rowling</p>
+          <p>The first book in the Harry Potter series, introducing the magical world of Hogwarts.</p>
+      </div>
+      <div class="book-card">
+        <h3>The Name of the Wind</h2>
+          <p>by Patrick Rothfuss</p>
+          <p>A tale of a magically gifted young man who grows up to be the most notorious wizard his world has
+            ever seen.</p>
+      </div>
+      <h2 id="ScienceFiction">My favorite science fiction books</h2>
+      <div class="book-card">
+        <h3>Dune</h2>
+          <p>by Frank Herbert</p>
+          <p>A science fiction epic set on the desert planet Arrakis, focusing on politics, religion, and
+            ecology.
+          </p>
+      </div>
+      <div class="book-card">
+        <h3>Neuromancer</h2>
+          <p>by William Gibson</p>
+          <p>A cyberpunk novel that explores artificial intelligence and virtual reality.</p>
+      </div>
+      <div class="book-card">
+        <h3>The Left Hand of Darkness</h2>
+          <p>by Ursula K. Le Guin</p>
+          <p>A science fiction story set on a planet where the inhabitants can change gender.</p>
+      </div>
+      <h2 id="NonFiction">My favorite non-fiction books</h2>
+      <div class="book-card">
+        <h3>Sapiens: A Brief History of Humankind</h2>
+          <p>by Yuval Noah Harari</p>
+          <p>An exploration of the history and impact of Homo sapiens on the world.</p>
+      </div>
+      <div class="book-card">
+        <h3>In Cold Blood</h3>
+        <p>by Truman Capote</p>
+        <p>On November 15, 1959, in the small town of Holcomb, Kansas, four members of the Clutter family were
+          savagely murdered by blasts from a shotgun held a few inches from their faces. There was no apparent
+          motive for the crime, and there were almost no clues. </p>
+      </div>
+      <div class="book-card">
+        <h3>Hiroshima</h3>
+        <p>by John Hersey</p>
+        <p>Hiroshima is the story of six human beings who lived through the greatest single manmade disaster in
+          history. John Hersey tells what these six -- a clerk, a widowed seamstress, a physician, a Methodist
+          minister, a young surgeon, and a German Catholic priest -- were doing at 8:15 a.m. on August 6,
+          1945, when Hiroshima was destroyed by the first atomic bomb ever dropped on a city. Then he follows
+          the course of their lives hour by hour, day by day.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p class="copyright">&copy; Biba&Boba Company. All rights reserved.</p>
+  </footer>
+  </div>
+  <script>
+    const form = document.querySelector('.login-form');
+    const backdrop = document.querySelector('.backdrop');
+    const overlay = document.querySelector('.overlay');
+    const content = document.querySelector('.content');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const loginInput = document.querySelector('#login');
+      const passwordInput = document.querySelector('#password');
+
+      const loginValue = loginInput.value;
+      const passwordValue = passwordInput.value;
+
+      if (loginValue === "Biba" && passwordValue === "Boba") {
+        overlay.style.display = 'none';
+        backdrop.style.display = 'none';
+        content.style.filter = 'none';
+      }
+      else {
+        alert('Invalid login or password. Please try again.');
+      }
+    });
+  </script>
+</body>
+
+</html>

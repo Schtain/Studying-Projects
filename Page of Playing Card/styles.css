@@ -1,0 +1,37 @@
+.card div {
+    font-size: 200px;
+    border: solid black 2px;
+
+}
+
+.card {
+    border: 2px solid green;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.left {
+    align-self: flex-start
+}
+
+.middle {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+    align-self: flex-end
+}
+
+#playing-cards {
+    width: 700px;
+    display: flex;
+    border: 2px solid red;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}

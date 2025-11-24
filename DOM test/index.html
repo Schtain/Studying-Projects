@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>List of deserts</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <!-- Pop up form -->
+  <div id="pop-up">
+    <form id="my-form" action="index.html" method="post">
+      <button type="button" id="close-window" name="close-window" onclick="hideForm()">X</button>
+      <label for="new-ingredent">Enter new dessert:<input type="text" name="new-ingredient" id="new-ingredient"
+          placeholder="The most tasty desser ever"></label>
+      <input type="submit" name="submit" id="submit" value="Submit">
+    </form>
+  </div>
+
+  <!-- Black Screen -->
+
+  <div id="black-screen">
+  </div>
+
+  <!-- Main list structure -->
+  <div id="container">
+    <button type="button" name="button" id="add-btn" onclick="showForm()">Add new dessert</button>
+    <ul id="desserts">
+      <li>Cake</li>
+      <li>Pie</li>
+      <li>Brownie</li>
+    </ul>
+  </div>
+  <script>
+    const popUp = document.getElementById('pop-up');
+    let popUpIsHidden = true;
+    let barrier = document.getElementById('black-screen');
+    let barrierIsHidden = true;
+    function showForm() {
+      if (popUpIsHidden || barrierIsHidden) {
+        barrier.style.display = "block";
+        barrierIsHidden = false;
+        popUp.style.display = "flex";
+        popUpIsHidden = false;
+      }
+      else {
+        popUp.style.display = "none";
+        barrier.style.display = "none";
+        popUpIsHidden = true;
+        barrierIsHidden = true;
+      }
+    }
+    function hideForm() {
+      if (!popUpIsHidden && !barrierIsHidden) {
+        popUp.style.display = "none";
+        barrier.style.display = "none";
+        popUpIsHidden = true;
+        barrierIsHidden = true;
+      }
+      else {
+        return;
+      }
+    }
+    document.getElementById("my-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const value = document.getElementById("new-ingredient").value;
+      if (value.trim() === "") {
+        alert("Can't be empty string");
+      }
+      else if (/\d/.test(value)) {
+        alert("You can't use numbers");
+      }
+      else {
+        const li = document.createElement("li");
+        li.textContent = value;
+        document.getElementById("desserts").appendChild(li);
+      }
+      document.getElementById("new-ingredient").value = "";
+    });
+
+  </script>
+</body>
+
+</html>

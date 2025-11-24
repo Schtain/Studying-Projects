@@ -1,0 +1,13 @@
+p:first-of-type {
+  color: #00f;
+
+}
+
+.box {
+  background: linear-gradient(to bottom right, red, blue);
+}
+
+p:last-of-type {
+  background-color: green;
+  color: white
+}
